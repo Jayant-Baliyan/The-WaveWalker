@@ -1,0 +1,89 @@
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Space+Grotesk%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style type="text/tailwindcss">
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .float {
+        animation: float 3s ease-in-out infinite;
+      }
+      @keyframes glow {
+        0%, 100% { box-shadow: 0 0 2px #38bdf8, 0 0 5px #38bdf8; }
+        50% { box-shadow: 0 0 5px #38bdf8, 0 0 10px #38bdf8; }
+      }
+      .glow-dot {
+        animation: glow 2s ease-in-out infinite;
+      }
+    </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body class="bg-gradient-to-b from-[#0a192f] to-[#173a5e] text-white" style='font-family: "Space Grotesk", "Noto Sans", sans-serif;'>
+<div class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-10">
+<div class="absolute top-1/4 left-1/4 w-32 h-32 bg-cyan-400 rounded-full mix-blend-screen filter blur-3xl animate-pulse"></div>
+<div class="absolute bottom-1/4 right-1/4 w-32 h-32 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl animate-pulse delay-2000"></div>
+<div class="absolute top-10 right-20 w-16 h-16 bg-cyan-200 rounded-full mix-blend-screen filter blur-2xl animate-pulse delay-1000"></div>
+<div class="absolute bottom-10 left-20 w-16 h-16 bg-blue-300 rounded-full mix-blend-screen filter blur-2xl animate-pulse delay-3000"></div>
+</div>
+<main class="z-10 flex flex-col lg:flex-row items-center justify-center container mx-auto px-6 py-16 text-center lg:text-left">
+<div class="lg:w-1/2 lg:pr-12">
+<h1 class="text-5xl md:text-6xl font-bold leading-tight mb-4" align-text="center">
+                 BlackPearl
+          </h1>
+<p class="text-lg md:text-xl text-gray-300 mb-8">
+            Query ARGO float data, visualize marine trends, and explore BGC parameters — all through natural language.
+          </p>
+<div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-12">
+<a href="Code/working_sample.html" class="flex items-center justify-center rounded-lg h-12 px-6 bg-[#0f66bd] text-white text-base font-bold transform hover:scale-105 transition-transform duration-300">
+              Search Data
+</a>
+<a href="Code/sample.html" class="flex items-center justify-center rounded-lg h-12 px-6 bg-cyan-400/20 text-cyan-300 text-base font-bold border border-cyan-400/50 transform hover:scale-105 transition-transform duration-300">
+              View Sample
+</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="flex flex-col items-center gap-2 p-4 rounded-lg bg-white/5 float">
+<span class="material-symbols-outlined text-cyan-400 text-3xl">chat_bubble</span>
+<a href="Code/nlp.html" class="text-sm font-bold text-center w-full" >Get API</a>
+</div>
+
+<div class="flex flex-col items-center gap-2 p-4 rounded-lg bg-white/5 float" style="animation-delay: 0.5s;">
+<span class="material-symbols-outlined text-cyan-400 text-3xl">download</span>
+<a href="Code/download.html" class="text-sm font-bold text-center w-full" >Download Data</a>
+</div>
+<div class="flex flex-col items-center gap-2 p-4 rounded-lg bg-white/5 float" style="animation-delay: 1s;">
+<span class="material-symbols-outlined text-cyan-400 text-3xl">bar_chart</span>
+<a href="Code/interactive.html" class="text-sm font-bold text-center w-full" >Ocean Data Explorer</a>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 mt-12 lg:mt-0 flex justify-center">
+<div class="relative w-full max-w-2xl">
+<img alt="World Map" class="w-full h-auto" src="https://argo.ucsd.edu/wp-content/uploads/sites/361/2020/01/Argo_float_loc_map-e1586811588426.jpg"/>     
+<div class="absolute top-3/4 left-1/3 w-2 h-2 bg-cyan-400 rounded-full glow-dot" style="animation-delay: 0.7s;"></div>
+<div class="absolute top-2/4 left-1/5 w-2 h-2 bg-cyan-400 rounded-full glow-dot" style="animation-delay: 0.4s;"></div>
+<div class="absolute top-1/3 left-2/3 w-2 h-2 bg-cyan-400 rounded-full glow-dot" style="animation-delay: 0.6s;"></div>
+<div class="absolute top-1/2 left-3/5 w-2 h-2 bg-cyan-400 rounded-full glow-dot" style="animation-delay: 0.8s;"></div>
+<div class="absolute top-2/3 left-1/2 w-2 h-2 bg-cyan-400 rounded-full glow-dot" style="animation-delay: 0.9s;"></div>
+<div class="absolute top-1/2 left-1/3 w-2 h-2 bg-cyan-400 rounded-full glow-dot" style="animation-delay: 1.1s;"></div>
+<div class="absolute top-3/4 left-2/3 w-2 h-2 bg-cyan-400 rounded-full glow-dot" style="animation-delay: 1.3s;"></div>
+<div class="absolute top-1/4 left-1/2 w-2 h-2 bg-cyan-400 rounded-full glow-dot" style="animation-delay: 1.2s;"></div>
+<div class="absolute top-2/3 left-1/4 w-2 h-2 bg-cyan-400 rounded-full glow-dot" style="animation-delay: 1.4s;"></div>
+<div class="absolute top-3/4 left-1/2 w-2 h-2 bg-cyan-400 rounded-full glow-dot" style="animation-delay: 1.5s;"></div>
+<div class="absolute top-1/3 left-1/3 w-2 h-2 bg-cyan-400 rounded-full glow-dot" style="animation-delay: 1.6s;"></div>
+<div class="absolute top-2/3 left-2/5 w-2 h-2 bg-cyan-400 rounded-full glow-dot" style="animation-delay: 1.7s;"></div>
+</div>
+</div>
+</main>
+<footer class="w-full text-center py-4 absolute bottom-0 z-10">
+<p class="text-xs text-gray-400">Prototype developed for Smart India Hackathon 2025 | Team The WaveWalker</p>
+</footer>
+</div>
+</body></html>
