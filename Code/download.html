@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Space+Grotesk:wght@400;500;700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>BlackPearl - Download Data</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0da6f2",
+            "background-light": "#f5f7f8",
+            "background-dark": "#101c22",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .form-select {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+      background-position: right 0.5rem center;
+      background-repeat: no-repeat;
+      background-size: 1.5em 1.5em;
+      padding-right: 2.5rem;
+      -webkit-print-color-adjust: exact;
+      color-adjust: exact;
+      appearance: none;
+    }
+    .dark .form-select {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex min-h-screen flex-col">
+<main class="flex-grow">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+<div class="mx-auto max-w-3xl">
+<div class="text-center mb-12">
+<h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl">Download Data</h1>
+<p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+              Please fill out the form below to request access to our oceanographic data. Your request will be reviewed for compliance with our privacy policy before data access is granted.
+            </p>
+</div>
+<form class="space-y-8">
+<div class="grid grid-cols-1 gap-x-6 gap-y-8">
+<div>
+<label class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200" for="email">Email Address</label>
+<div class="mt-2">
+<input class="block w-full rounded border-0 bg-white/5 dark:bg-black/5 p-4 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6" id="email" name="email" placeholder="you@example.com" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200" for="purpose">What is your primary research or application purpose for this data?</label>
+<div class="mt-2">
+<textarea class="block w-full rounded border-0 bg-white/5 dark:bg-black/5 p-4 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6" id="purpose" name="purpose" placeholder="Describe your research or application purpose" rows="4"></textarea>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200" for="parameters">Which specific BGC (Biogeochemical) parameters are you interested in?</label>
+<div class="mt-2">
+<textarea class="block w-full rounded border-0 bg-white/5 dark:bg-black/5 p-4 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6" id="parameters" name="parameters" placeholder="e.g., Oxygen, Nitrate, Chlorophyll-a" rows="4"></textarea>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200" for="location-time">What geographic regions and time periods do you need data for?</label>
+<div class="mt-2">
+<textarea class="block w-full rounded border-0 bg-white/5 dark:bg-black/5 p-4 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6" id="location-time" name="location-time" placeholder="e.g., North Atlantic, 2010-2020" rows="4"></textarea>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200" for="usage-plan">How do you plan to use or analyze this data?</label>
+<div class="mt-2">
+<textarea class="block w-full rounded border-0 bg-white/5 dark:bg-black/5 p-4 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 placeholder:text-gray-400 dark:placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6" id="usage-plan" name="usage-plan" placeholder="Describe your data usage and analysis plans" rows="4"></textarea>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200" for="affiliation">Are you affiliated with an academic, governmental, or commercial institution?</label>
+<div class="mt-2">
+<select class="form-select block w-full rounded border-0 bg-white/5 dark:bg-black/5 py-2.5 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6" id="affiliation" name="affiliation">
+<option>Select affiliation</option>
+<option>Academic</option>
+<option>Governmental</option>
+<option>Commercial</option>
+<option>Non-Profit/NGO</option>
+<option>Independent</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200" for="publication">Will this data be used for publication or public dissemination?</label>
+<div class="mt-2">
+<select class="form-select block w-full rounded border-0 bg-white/5 dark:bg-black/5 py-2.5 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-gray-700 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6" id="publication" name="publication">
+<option>Select option</option>
+<option>Yes</option>
+<option>No</option>
+<option>Uncertain</option>
+</select>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-200 dark:border-gray-800 pt-8">
+<p class="text-sm text-gray-500 dark:text-gray-400">By submitting this form, you agree to our <a class="font-medium text-primary hover:underline" href="#">privacy policy</a> and <a class="font-medium text-primary hover:underline" href="#">terms of service</a>. We'll review your request and get back to you shortly.</p>
+<div class="mt-6 flex justify-end">
+<button class="rounded bg-primary px-8 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary transition-colors" type="submit">
+                  Submit Request
+                </button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

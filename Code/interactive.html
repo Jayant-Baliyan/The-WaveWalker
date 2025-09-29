@@ -1,0 +1,296 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Ocean Data Explorer</title>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter:wght@400;500;600;700&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style type="text/tailwindcss">
+        :root {
+            --primary-color: #4ac7c7;
+            --secondary-color: #1a2933;
+            --accent-color: #335266;
+            --text-primary: #e6f1f8;
+            --text-secondary: #92b3c8;
+            --bg-color: #111b22;
+            --sand-color: #c2b280;
+            --land-color: #008080;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .card {
+            background-color: var(--secondary-color);
+            border: 1px solid var(--accent-color);
+            border-radius: 0.5rem;
+        }
+        .form-input {
+            background-color: var(--bg-color);
+            border: 1px solid var(--accent-color);
+            color: var(--text-primary);
+        }
+        .form-input::placeholder {
+            color: var(--text-secondary);
+        }
+        .form-input:focus {
+            outline: 2px solid var(--primary-color);
+            outline-offset: 2px;
+            border-color: transparent;
+        }
+        .parameter-btn.active {
+            background-color: var(--accent-color);
+            color: var(--text-primary);
+        }
+        .placeholder-text {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body class="bg-[var(--bg-color)] text-[var(--text-primary)]">
+    <div class="flex min-h-screen flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[var(--accent-color)] px-4 sm:px-6 lg:px-10 py-3">
+            <div class="flex items-center gap-4">
+                <div class="text-[var(--primary-color)]">
+                    <svg class="h-8 w-8" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+                        <path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h1 class="text-xl font-bold leading-tight tracking-tight">Ocean Data Explorer</h1>
+            </div>
+            <div class="hidden md:flex items-center gap-6">
+                <nav class="flex items-center gap-6 text-sm font-medium">
+                    <a class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors" href="file:///D:/Ideathon/SIH/index.html">Home</a>
+                    <a class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors" href="#">Data</a>
+                    <a class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors" href="#">About</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <button class="flex h-10 w-10 items-center justify-center rounded-full bg-[var(--secondary-color)] text-[var(--text-secondary)] hover:bg-[var(--accent-color)] hover:text-[var(--text-primary)] transition-colors">
+                        <span class="material-symbols-outlined">help</span>
+                    </button>
+                    <div class="h-10 w-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDIOuf-koR53_mpggX4D0T719ihZHLx2618puj1lr686ttFBXGS55EqgZ6lhXVRjLvtN5F-IMD1o-pe1BtwfyFTiVggBPfMT4A6DZ2NtrxlCgBJdwkTuXUBvs-bxsS3jaG2HVgvaGm5DkBh61PdyHYVwPcWsv_r1MVnMHXjXLB7_UASW0XCIBi43X-drlH2o1iFot2ZnitmvNWqjzE5282gVGx4b66ywsgE6eHqO21_fWvRgiL9toSDnLaOfe-8R4IV72xFYYgVPhQT");'></div>
+                </div>
+            </div>
+            <button class="md:hidden flex items-center justify-center rounded-full text-[var(--text-secondary)]">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </header>
+        <main class="flex flex-1 flex-col lg:grid lg:grid-cols-12 gap-6 p-4 sm:p-6 lg:p-8">
+            <div class="lg:col-span-4 xl:col-span-3 flex flex-col gap-6">
+                <div class="card p-4">
+                    <div class="aspect-video w-full rounded-md bg-[var(--sand-color)] flex items-center justify-center">
+                        <img alt="Dark theme map with teal landmass and sandy beige sea" class="h-full w-full object-cover rounded-md" src="penninsular_india.png"/>
+                    </div>
+                </div>
+                <div class="card p-4">
+                    <h2 class="text-lg font-semibold leading-tight tracking-tight mb-4">Query Parameters</h2>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-[var(--text-secondary)] pb-1.5" for="latitude">Latitude</label>
+                            <input class="form-input block h-12 w-full rounded-md p-3 text-sm" id="latitude" placeholder="e.g., 0.5" type="text" value="0.5°N"/>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-[var(--text-secondary)] pb-1.5" for="longitude">Longitude</label>
+                            <input class="form-input block h-12 w-full rounded-md p-3 text-sm" id="longitude" placeholder="e.g., -150.1" type="text" value="150.1°W"/>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-[var(--text-secondary)] pb-1.5" for="time-period">Time Period</label>
+                            <select class="form-input block h-12 w-full appearance-none rounded-md p-3 text-sm bg-no-repeat bg-right-2.5" id="time-period" style="background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 20 20%27%3e%3cpath stroke=%27%2392b3c8%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%271.5%27 d=%27M6 8l4 4 4-4%27/%3e%3c/svg%3e');">
+                                <option>March 2023</option>
+                                <option>Last 6 Months</option>
+                                <option>Last Year</option>
+                            </select>
+                        </div>
+                        <button class="w-full bg-[var(--primary-color)] h-12 rounded-md text-sm font-semibold text-black hover:opacity-90 transition-opacity" type="submit">
+                            Apply Filter
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="lg:col-span-8 xl:col-span-9 flex flex-col gap-6">
+                <div class="card p-6">
+                    <div class="flex flex-col @container">
+                        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[var(--accent-color)] pb-3">
+                            <h2 class="text-lg font-semibold leading-tight tracking-tight">Results</h2>
+                            <div class="flex items-center gap-x-1 sm:gap-x-2 rounded-md bg-[var(--bg-color)] p-1">
+                                <button class="parameter-btn px-3 py-1.5 text-sm font-medium rounded-md bg-[var(--accent-color)] text-[var(--text-primary)]" data-parameter="salinity">Salinity</button>
+                                <button class="parameter-btn px-3 py-1.5 text-sm font-medium rounded-md text-[var(--text-secondary)] hover:bg-[var(--accent-color)] hover:text-[var(--text-primary)] transition-colors" data-parameter="temperature">Temperature</button>
+                                <button class="parameter-btn px-3 py-1.5 text-sm font-medium rounded-md text-[var(--text-secondary)] hover:bg-[var(--accent-color)] hover:text-[var(--text-primary)] transition-colors" data-parameter="oxygen">Oxygen</button>
+                                <button class="parameter-btn px-3 py-1.5 text-sm font-medium rounded-md text-[var(--text-secondary)] hover:bg-[var(--accent-color)] hover:text-[var(--text-primary)] transition-colors" data-parameter="ph">pH</button>
+                                <button class="parameter-btn px-3 py-1.5 text-sm font-medium rounded-md text-[var(--text-secondary)] hover:bg-[var(--accent-color)] hover:text-[var(--text-primary)] transition-colors" data-parameter="nitrate">Nitrate</button>
+                                <button class="parameter-btn px-3 py-1.5 text-sm font-medium rounded-md text-[var(--text-secondary)] hover:bg-[var(--accent-color)] hover:text-[var(--text-primary)] transition-colors" data-parameter="pressure">Pressure</button>
+                            </div>
+                        </div>
+                        <div class="mt-6 h-80">
+                            <div id="graph-container" class="mt-6 h-80 flex flex-col items-center justify-center bg-[var(--bg-color)] rounded-md">
+                                <img id="graph-image" class="h-full object-contain rounded-md" src="salinity_depth.jpg" alt="Salinity Depth" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-6 flex items-center justify-between gap-4">
+                    <p id="graph-description" class="text-sm leading-relaxed text-[var(--text-secondary)]">Salinity has shown a <span class="text-[var(--text-primary)] font-medium">gradual increase of 1.2%</span> with depth.</p>
+                    <div id="sparkline-container" class="w-32 h-8">
+                        <svg fill="none" height="100%" preserveAspectRatio="none" viewBox="0 0 128 32" width="100%" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 21.3721L13.1111 23.3953C25.2222 25.4186 49.4444 29.4651 73.6667 25.4186C97.8889 21.3721 110 9.25581 116.056 3.2093L122.111 1V31H1V21.3721Z" fill="url(#paint0_linear_spark)"></path>
+                            <path d="M1 21.3721L13.1111 23.3953C25.2222 25.4186 49.4444 29.4651 73.6667 25.4186C97.8889 21.3721 110 9.25581 116.056 3.2093L122.111 1" stroke="#4AC7C7" stroke-linecap="round" stroke-width="2"></path>
+                            <defs>
+                                <linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_spark" x1="61.5556" x2="61.5556" y1="1" y2="31">
+                                    <stop stop-color="#4AC7C7" stop-opacity="0.3"></stop>
+                                    <stop offset="1" stop-color="#4AC7C7" stop-opacity="0"></stop>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card p-6">
+                    <h2 class="text-lg font-semibold leading-tight tracking-tight mb-4">Data Table</h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full min-w-[600px] text-sm">
+                            <thead class="border-b border-[var(--accent-color)]">
+                                <tr>
+                                    <th class="px-4 py-3 text-left font-medium text-[var(--text-secondary)]">Depth(m)</th>
+                                    <th class="px-4 py-3 text-left font-medium text-[var(--text-secondary)]">Salinity (PSU)</th>
+                                    <th class="px-4 py-3 text-left font-medium text-[var(--text-secondary)]">Temperature (°C)</th>
+                                    <th class="px-4 py-3 text-left font-medium text-[var(--text-secondary)]">Oxygen (mg/L)</th>
+                                    <th class="px-4 py-3 text-left font-medium text-[var(--text-secondary)]">pH</th>
+                                    <th class="px-4 py-3 text-left font-medium text-[var(--text-secondary)]">Nitrate (μmol/L)</th>
+                                    <th class="px-4 py-3 text-left font-medium text-[var(--text-secondary)]">Pressure (dbar)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-[var(--accent-color)]">
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">0</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)] font-medium">34.8</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">15.2</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">6.8</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">8.05</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">5.1</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">1012</td>
+                                </tr>
+                                <tr class="border-b border-[var(--accent-color)]">
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">10</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)] font-medium">34.9</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">15.3</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">6.7</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">8.06</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">5.3</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">1011</td>
+                                </tr>
+                                <tr class="border-b border-[var(--accent-color)]">
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">20</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)] font-medium">35.0</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">15.5</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">6.6</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">8.05</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">5.2</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">1013</td>
+                                </tr>
+                                <tr class="border-b border-[var(--accent-color)]">
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">50</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)] font-medium">35.1</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">15.6</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">6.7</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">8.07</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">5.4</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">1014</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">100</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)] font-medium">35.2</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">15.7</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">6.8</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">8.08</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">5.5</td>
+                                    <td class="px-4 py-3.5 text-[var(--text-secondary)]">1013</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all parameter buttons
+            const parameterButtons = document.querySelectorAll('.parameter-btn');
+            const graphImage = document.getElementById('graph-image');
+            const graphDescription = document.getElementById('graph-description');
+            const sparklineContainer = document.getElementById('sparkline-container');
+            
+            // Add click event listeners to each button
+            parameterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Get the parameter from the data attribute
+                    const parameter = this.getAttribute('data-parameter');
+                    
+                    // Update the graph image based on the selected parameter
+                    updateGraph(parameter);
+                    
+                    // Update the active state of buttons
+                    updateActiveButton(this);
+                });
+            });
+            
+            // Function to update the graph image
+            function updateGraph(parameter) {
+                // Map parameters to their corresponding images and descriptions
+                const parameterData = {
+                    'salinity': {
+                        image: 'salinity_depth.jpg',
+                        description: 'Salinity has shown a <span class="text-[var(--text-primary)] font-medium">gradual increase of 1.2%</span> with depth.'
+                    },
+                    'temperature': {
+                        image: 'temperature.jpg',
+                        description: 'Temperature has shown a <span class="text-[var(--text-primary)] font-medium">steady decrease of 0.5°C</span> with depth.'
+                    },
+                    'oxygen': {
+                        image: 'oxygen.jpg',
+                        description: 'Oxygen levels have shown a <span class="text-[var(--text-primary)] font-medium">slight decrease of 0.3 mg/L</span> with depth.'
+                    },
+                    'ph': {
+                        image: 'ph.jpg',
+                        description: 'pH has shown a <span class="text-[var(--text-primary)] font-medium">minimal variation of 0.03</span> with depth.'
+                    },
+                    'nitrate': {
+                        image: 'nitrate.jpg',
+                        description: 'Nitrate concentration has shown a <span class="text-[var(--text-primary)] font-medium">steady increase of 0.4 μmol/L</span> with depth.'
+                    },
+                    'pressure': {
+                        image: 'pressure.jpg',
+                        description: 'Pressure has shown a <span class="text-[var(--text-primary)] font-medium">linear increase of 10 dbar</span> with depth.'
+                    }
+                };
+                
+                // Update the image and description
+                if (parameterData[parameter]) {
+                    // Update the image and description
+                    graphImage.src = parameterData[parameter].image;
+                    graphImage.alt = parameter.charAt(0).toUpperCase() + parameter.slice(1) + ' Depth';
+                    graphDescription.innerHTML = parameterData[parameter].description;
+                }
+            }
+            
+            // Function to update the active button state
+            function updateActiveButton(activeButton) {
+                // Remove active class from all buttons
+                parameterButtons.forEach(button => {
+                    button.classList.remove('active');
+                    button.classList.add('text-[var(--text-secondary)]');
+                    button.classList.remove('bg-[var(--accent-color)]', 'text-[var(--text-primary)]');
+                });
+                
+                // Add active class to the clicked button
+                activeButton.classList.add('active');
+                activeButton.classList.remove('text-[var(--text-secondary)]');
+                activeButton.classList.add('bg-[var(--accent-color)]', 'text-[var(--text-primary)]');
+            }
+        });
+    </script>
+</body>
+</html>
